@@ -7,6 +7,7 @@ from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from markitdown import MarkItDown
+import uvicorn
 
 BASE_DIR = Path(__file__).resolve().parent
 MAX_FILE_SIZE = 50 * 1024 * 1024
@@ -39,3 +40,7 @@ async def convert(file: UploadFile = File(...)) -> dict[str, str]:
         raise HTTPException(
             422, "이 파일은 아직 변환하지 못했어요. 다른 형식이거나 필요한 변환기가 없을 수 있어요."
         ) from exc
+
+
+if __name__ == "__main__":
+    uvicorn.run("app:app", host="127.0.0.1", port=8000, reload=True)

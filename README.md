@@ -13,7 +13,7 @@ Python 3.10 이상에서 실행하세요.
 
 ```powershell
 uv sync
-uv run uvicorn app:app --reload
+uv run app.py
 ```
 
 그 다음 `http://127.0.0.1:8000`을 여세요.
