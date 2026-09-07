@@ -12,10 +12,8 @@ ZIP, EPUB, 오디오 등을 변환합니다. 파일 선택은 제한하지 않�
 Python 3.10 이상에서 실행하세요.
 
 ```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-uvicorn app:app --reload
+uv sync
+uv run uvicorn app:app --reload
 ```
 
 그 다음 `http://127.0.0.1:8000`을 여세요.
@@ -24,7 +22,7 @@ uvicorn app:app --reload
 
 ```powershell
 docker build -t drop-to-markdown .
-docker run --rm -p 8000:8001 drop-to-markdown
+docker run --rm -p 8000:8000 drop-to-markdown
 ```
 
 업로드 파일은 서버 디스크에 저장하지 않고 메모리에서 변환됩니다. 현재 업로드 제한은 50MB입니다.
