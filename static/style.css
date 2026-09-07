@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+:root { --ink:#20211e; --paper:#f5f1e8; --accent:#e7572b; --line:#cfc6b6; }
+* { box-sizing:border-box; }
+body { margin:0; color:var(--ink); background:var(--paper); font-family:'DM Mono', monospace; }
+main { width:min(880px, calc(100% - 40px)); margin:0 auto; padding:80px 0; }
+header { border-bottom:1px solid var(--ink); padding-bottom:38px; }
+.eyebrow, .card-label { font-size:11px; letter-spacing:.12em; }
+h1 { font:700 clamp(44px, 9vw, 86px)/.95 'Nanum Myeongjo', serif; letter-spacing:-.07em; margin:18px 0; }
+h1 em { color:var(--accent); font-style:normal; }
+.intro { max-width:520px; line-height:1.8; font-size:13px; }
+.drop-zone { border:1.5px dashed var(--ink); min-height:300px; margin:38px 0 24px; display:grid; place-content:center; text-align:center; transition:.2s; }
+.drop-zone.over { background:#f9c66c; transform:scale(1.01); }
+.drop-icon { font:48px/1 serif; color:var(--accent); }
+h2 { font:700 23px 'Nanum Myeongjo', serif; margin:18px 0 8px; }
+.drop-zone p, .drag-note { font-size:11px; color:#67665f; }
+.support-note { border-left:3px solid var(--accent); margin:0 0 36px; padding:2px 0 2px 15px; }
+.support-note p { margin:5px 0; font-size:12px; line-height:1.7; }
+.support-note .card-label { color:var(--accent); font-size:10px; }
+.support-note .fine-print { color:#67665f; font-size:11px; }
+button { border:1px solid var(--ink); background:var(--ink); color:var(--paper); padding:12px 17px; margin:12px auto 0; font:500 12px 'DM Mono', monospace; cursor:pointer; }
+button:hover { background:var(--accent); border-color:var(--accent); }
+button.secondary { background:transparent; color:var(--ink); }
+.hidden { display:none; }
+.result { border-top:1px solid var(--ink); padding-top:18px; }
+.result-topline, .actions { display:flex; align-items:center; justify-content:space-between; gap:10px; font-size:12px; }
+.actions { justify-content:flex-start; margin:16px 0; }.actions button { margin:0; }
+.status-dot { display:inline-block; width:8px; height:8px; background:#6d9250; border-radius:50%; margin-right:8px; }
+.drag-note { margin:22px 0 9px; }
+#dragCard { cursor:grab; background:#20211e; color:#e9e3d6; padding:20px; max-height:480px; overflow:auto; box-shadow:7px 7px 0 var(--accent); }
+#dragCard:active { cursor:grabbing; }
+.card-label { color:#f9c66c; padding-bottom:14px; border-bottom:1px solid #575851; }
+pre { white-space:pre-wrap; overflow-wrap:anywhere; font:12px/1.7 'DM Mono', monospace; margin:16px 0 0; }
+.notice { min-height:20px; font-size:12px; margin-top:24px; }.notice.error { color:#b42f1a; }
+@media (max-width:600px) { main { width:min(100% - 28px, 880px); padding:45px 0; } .drop-zone { min-height:250px; } .actions { align-items:stretch; flex-direction:column; } .actions button { width:100%; } }

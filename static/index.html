@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drop to Markdown</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">MARKITDOWN · LOCAL CONVERTER</p>
+        <h1>파일을 <em>Markdown</em>으로.</h1>
+        <p class="intro">MarkItDown이 지원하는 파일을 LLM용 Markdown으로 바꿉니다.</p>
+      </header>
+
+      <section class="drop-zone" id="dropZone" aria-label="파일 업로드 영역">
+        <input id="fileInput" type="file" hidden />
+        <div class="drop-icon">↓</div>
+        <h2>파일을 여기로 끌어 놓으세요</h2>
+        <p>최대 50MB · 지원되지 않는 형식은 변환할 수 없어요</p>
+        <button id="chooseButton" type="button">파일 선택</button>
+      </section>
+
+      <aside class="support-note">
+        <p class="card-label">SUPPORTED BY MARKITDOWN</p>
+        <p>PDF · Word · PowerPoint · Excel · 이미지 · HTML · CSV/JSON/XML · ZIP · EPUB · 오디오</p>
+        <p class="fine-print">일부 형식은 변환 환경 또는 파일 내용에 따라 결과가 달라질 수 있습니다.</p>
+      </aside>
+
+      <section class="result hidden" id="result">
+        <div class="result-topline">
+          <div><span class="status-dot"></span><span id="fileName">변환 완료</span></div>
+          <span id="charCount"></span>
+        </div>
+        <div class="actions">
+          <button id="copyButton" type="button">Markdown 복사</button>
+          <button id="downloadButton" class="secondary" type="button">.md 다운로드</button>
+        </div>
+        <p class="drag-note">아래 카드를 잡아 ChatGPT, Claude 등의 입력창에 놓아도 됩니다.</p>
+        <article id="dragCard" draggable="true" title="채팅창으로 끌어 놓기">
+          <div class="card-label">DRAG TO CHAT</div>
+          <pre id="markdownOutput"></pre>
+        </article>
+      </section>
+
+      <p class="notice" id="notice" role="status"></p>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
